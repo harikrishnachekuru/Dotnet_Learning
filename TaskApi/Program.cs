@@ -1,42 +1,29 @@
-var builder = WebApplication.CreateBuilder(args);
+using MyApp;
 
-// Add services to the container.
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
-builder.Services.AddControllers();
-var app = builder.Build();
+//var builder = WebApplication.CreateBuilder(args);
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.MapOpenApi();
-}
+//builder.Services.AddOpenApi();
+//builder.Services.AddControllers();
 
-app.UseHttpsRedirection();
-app.MapControllers();
+//var app = builder.Build();
 
-var summaries = new[]
-{
-    "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-};
+//if (app.Environment.IsDevelopment())
+//{
+//    app.MapOpenApi();
+//}
 
-app.MapGet("/weatherforecast", () =>
-{
-    var forecast =  Enumerable.Range(1, 5).Select(index =>
-        new WeatherForecast
-        (
-            DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-            Random.Shared.Next(-20, 55),
-            summaries[Random.Shared.Next(summaries.Length)]
-        ))
-        .ToArray();
-    return forecast;
-})
-.WithName("GetWeatherForecast");
+//app.UseHttpsRedirection();
+//app.MapControllers();
 
-app.Run();
+// This code WILL run on application startup
+string input = "dotnet";
+string reversed = StringReverser.Reverse(input);
 
-record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
-{
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
-}
+Console.WriteLine(reversed);
+
+
+int[] arr = { 1, 2, 3, 1, 2, 3, 5, 3, 5, 6, 8 };
+
+FindDuplicate.dupArr(arr);
+
+//app.Run();
