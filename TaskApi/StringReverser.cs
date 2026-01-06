@@ -14,4 +14,10 @@ public static class StringReverser
 
         return new string(result);
     }
+    public static string ReverseLinqSafe(string? input)
+    {
+        return input == null
+            ? string.Empty
+            : new string(input.Reverse().ToArray());
+    }
 }
