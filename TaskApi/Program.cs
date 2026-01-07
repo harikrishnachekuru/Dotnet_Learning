@@ -47,4 +47,11 @@ foreach(var kv in resp)
     Console.WriteLine($"{kv.Key} : {kv.Value}");
 }
 
+Console.WriteLine("Fibinacci nums");
+
+var fibbi = FibinacciSeries.series(5);
+Console.WriteLine(fibbi);
+
+
+
 //app.Run();
