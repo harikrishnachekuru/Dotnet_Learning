@@ -23,7 +23,7 @@ Console.WriteLine(reversed);
 
 
 int[] arr = { 1, 2, 3, 1, 2, 3, 5, 3, 5, 6, 8 };
-int[] arr2 = { 1, 2, 3,5,4,7 };
+int[] arr2 = { 1, 2, 3, 5, 4, 7 };
 string str = "madam";
 string str3 = "Programming";
 
@@ -42,7 +42,7 @@ Console.WriteLine(res);
 Console.WriteLine("Character Counts");
 var resp = CountChars.CountingChars(str3);
 
-foreach(var kv in resp)
+foreach (var kv in resp)
 {
     Console.WriteLine($"{kv.Key} : {kv.Value}");
 }
@@ -52,6 +52,15 @@ Console.WriteLine("Fibinacci nums");
 var fibbi = FibinacciSeries.series(5);
 Console.WriteLine(fibbi);
 
+Console.WriteLine("Prime nums Checking");
+
+var Isprime = PrimeNumber.PrimeCheck(13);
+Console.WriteLine(Isprime);
+
+Console.WriteLine("Finding Missing Numbers from array");
+var Miss = MissingNums.FindMissNum(new int[] { 1, 2, 3, 5, 4, 7 }, 7);
+
+Console.WriteLine(Miss);
 
 
 //app.Run();
